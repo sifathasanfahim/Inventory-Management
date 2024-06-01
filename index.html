@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management</h1>
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Last Day Stock</th>
+                    <th>Today Added Stock</th>
+                    <th>Today Sale</th>
+                    <th>Final Stock</th>
+                    <th>Physically Counted Stock</th>
+                    <th>Waste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="productName" placeholder="Product Name"></td>
+                    <td><input type="number" id="lastDayStock" placeholder="0"></td>
+                    <td><input type="number" id="todayAddedStock" placeholder="0"></td>
+                    <td><input type="number" id="todaySale" placeholder="0"></td>
+                    <td><input type="number" id="finalStock" placeholder="0" readonly></td>
+                    <td><input type="number" id="physicallyCountedStock" placeholder="0"></td>
+                    <td><input type="number" id="waste" placeholder="0" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Last Day Stock</th>
+                    <th>Today Added Stock</th>
+                    <th>Today Sale</th>
+                    <th>Final Stock</th>
+                    <th>Physically Counted Stock</th>
+                    <th>Waste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="productName" placeholder="Product Name"></td>
+                    <td><input type="number" id="lastDayStock" placeholder="0"></td>
+                    <td><input type="number" id="todayAddedStock" placeholder="0"></td>
+                    <td><input type="number" id="todaySale" placeholder="0"></td>
+                    <td><input type="number" id="finalStock" placeholder="0" readonly></td>
+                    <td><input type="number" id="physicallyCountedStock" placeholder="0"></td>
+                    <td><input type="number" id="waste" placeholder="0" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Last Day Stock</th>
+                    <th>Today Added Stock</th>
+                    <th>Today Sale</th>
+                    <th>Final Stock</th>
+                    <th>Physically Counted Stock</th>
+                    <th>Waste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="productName" placeholder="Product Name"></td>
+                    <td><input type="number" id="lastDayStock" placeholder="0"></td>
+                    <td><input type="number" id="todayAddedStock" placeholder="0"></td>
+                    <td><input type="number" id="todaySale" placeholder="0"></td>
+                    <td><input type="number" id="finalStock" placeholder="0" readonly></td>
+                    <td><input type="number" id="physicallyCountedStock" placeholder="0"></td>
+                    <td><input type="number" id="waste" placeholder="0" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Last Day Stock</th>
+                    <th>Today Added Stock</th>
+                    <th>Today Sale</th>
+                    <th>Final Stock</th>
+                    <th>Physically Counted Stock</th>
+                    <th>Waste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="productName" placeholder="Product Name"></td>
+                    <td><input type="number" id="lastDayStock" placeholder="0"></td>
+                    <td><input type="number" id="todayAddedStock" placeholder="0"></td>
+                    <td><input type="number" id="todaySale" placeholder="0"></td>
+                    <td><input type="number" id="finalStock" placeholder="0" readonly></td>
+                    <td><input type="number" id="physicallyCountedStock" placeholder="0"></td>
+                    <td><input type="number" id="waste" placeholder="0" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="updateInventory()">Update Inventory</button>
+        <button onclick="window.print()">Print</button>
+    </div>
+    <script>
+        function updateInventory() {
+            const productName = document.getElementById('productName').value;
+            const lastDayStock = parseInt(document.getElementById('lastDayStock').value) || 0;
+            const todayAddedStock = parseInt(document.getElementById('todayAddedStock').value) || 0;
+            const todaySale = parseInt(document.getElementById('todaySale').value) || 0;
+            const physicallyCountedStock = parseInt(document.getElementById('physicallyCountedStock').value) || 0;
+
+            const finalStock = lastDayStock + todayAddedStock - todaySale;
+            const waste = finalStock - physicallyCountedStock;
+
+            document.getElementById('finalStock').value = finalStock;
+            document.getElementById('waste').value = waste;
+        }
+    </script>
+</body>
+</html>
